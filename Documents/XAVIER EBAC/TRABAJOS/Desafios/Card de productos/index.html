@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css/main.css"> 
+    <title>Desafio</title>
+</head>
+<body>
+    
+<!-- Componente de Tarjeta -->
+
+    <div class="card card--product">
+        <img src="producto.jpg" alt="Nombre del Producto" class="card-img-top">
+
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Producto</h5>
+            <p class="card-text">Descripción breve del producto.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#productoModal">Detalles</button>
+        </div>
+    </div>
+
+<!-- Modal de Detalles del Producto -->
+
+    <div class="modal fade" id="productoModal" tabindex="-1" role="dialog" aria-labelledby="productoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productoModalLabel">Detalles del producto...</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    <p>Detalles del producto...</p>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
