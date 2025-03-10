@@ -1,0 +1,738 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    font-family: "rubik";
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
+    box-sizing: $box_sz;
+    column-gap: 0.4rem;
+    row-gap: 0.4rem;
+    margin: 0.5rem;
+    @include center;
+
+    .sidebar_1 {
+        width: 100%;
+        height: 100%;
+        background-color: $color_box;
+        border-radius: $boder-rad;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        box-sizing: $box_sz;
+        justify-items: flex-start;
+        position: static;
+
+        .home {
+            @include sidebar1;
+        }
+
+        .search {
+            @include sidebar1;
+        }
+    }
+    
+    .sidebar_2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: $color_box;
+        border-radius: $boder-rad;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        box-sizing: $box_sz;
+        justify-items: flex-start;
+        
+
+        .library {
+            display: grid;
+            grid-template-columns:2fr 3rem 3rem;
+            grid-template-rows: 1fr;
+            color: $color_side-txt;
+            gap: 1rem;
+            text-decoration: none;
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            align-items: center;
+            width: 25rem;
+
+            .your_lib {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            text-decoration: none;
+            color: $color_side-txt;
+            gap: 1rem;
+            align-items: center;
+            }
+
+            .plus, 
+            .view {
+                display: flex;
+                @include center;
+                text-decoration: none;
+            }
+
+            svg {
+                grid-row-start: 2;
+                grid-row-end: 4;
+                grid-column-start: 1;
+                grid-column-end: 1;
+                fill: $color_side-txt;
+                width: 2rem;
+            }
+        }
+
+        .artist {
+            display: flex;
+            flex-direction: row;
+            padding: 0.4rem 1rem;
+            gap: 1rem;
+
+            .close {
+                display: flex;
+                background-color: #313131;
+                padding: 0.6rem 1.2rem;
+                border-radius: 50%;
+                @include center;
+                opacity: 0.4;
+            }
+
+            .btn_art {
+                padding: 0.5rem 1rem;
+                border-radius: 3rem;
+                color: #000000;
+                background-color: #fff;
+                cursor: pointer;
+                font-family: "rubik";
+                font-size: 1.5rem;
+            }    
+        }
+
+        .extra_options {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            color: $color_side-txt;
+            gap: 10rem;
+            text-decoration: none;
+            padding: 1rem 2rem;;
+            align-items: center;
+            font-size: 1.2rem;
+
+            .order {
+                display: flex;
+                flex-direction: row-reverse;
+                @include center;
+                text-decoration: none;
+                gap: 0.5rem;
+                color: $color_side-txt;
+            }
+        }
+
+        .list_artist {
+            display: flex;
+            flex-direction: column;
+            
+            .box_artist {
+                display: flex;
+                flex-direction: row;
+                padding: 1rem;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 1rem;
+                text-decoration: none;
+            }
+
+            .img_artist {
+                width: 4rem;
+                border-radius: 50%;
+            }
+            
+            .name_artist {
+                color: $color_side-txt;
+                font-size: 1.5rem;
+                
+            }
+        }
+
+    }
+
+    .topbar {
+        width: 100%;
+        height: 100%;
+        border-radius: $boder-rad;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        box-sizing: $box_sz;
+        z-index: 100;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.5rem;
+
+        .L_R {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            column-gap: 1rem;
+            width: 80%;
+
+            .left, 
+            .right {
+                background-color: #000000;
+                border-radius: 50%;
+                padding: 0.7rem 1rem;
+                border: none; 
+            }
+        }
+
+        .login {
+            display: grid;
+            grid-template-columns: 1fr 4rem 1fr;
+            @include center;
+            gap: 1rem;
+            text-decoration: none;
+            width: 30rem;
+
+            .install {
+                width: 100%;
+                border: none;
+                background-color: #313131;
+                color: #fff;
+                border-radius: 1.5rem;
+                padding: 0.65rem;
+                font-size: 1.2rem;
+                @include center;
+            }
+
+            .news {
+                width: 80%;
+                background-color: #313131;
+                border-radius: 50%;
+                border: none;
+                padding: 0.65rem 0.8rem;
+                @include center;
+                justify-items: center;
+            }
+
+            .sesion {
+                width: 100%;
+                border: none;
+                background-color: #ffffff;
+                color: #000000;
+                border-radius: 1.5rem;
+                padding: 0.65rem;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .title {
+        width: 100%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        z-index: 100;
+        justify-content: start;
+        font-size: 1rem;
+        color: #fff;
+        gap: 0.5rem;
+        box-sizing: border-box;
+        padding: 0.5rem 0 0.5rem 0.2rem;
+
+        .title_verify {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            padding-bottom: 0;
+
+            .img_verif {
+                width: 2.5rem;
+                height: 2.5rem;
+                }
+    
+            .verify_txt {
+                font-size: 1.5rem;
+            }
+        }
+
+        .name_title {
+            font-size: 10rem;
+            padding: 0 1rem;
+        }
+        
+        .followers {
+            font-size: 1.5rem;
+            font-weight: 400;
+            padding: 0 1rem ;
+        }
+
+        }
+
+
+    .content {
+        width: 100%;
+        height: 100%;
+        border-radius: $boder-rad;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        background-image: -moz-linear-gradient(center);
+        box-sizing: $box_sz;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 33rem 1fr;
+
+        .content_img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-image: url("../img/CREPPYNUTSPORTADA.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50%;
+            opacity: 0.86;
+            border-radius: 1rem 1rem 0 0;
+            }  
+        
+        .songs {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#686868,#0a0a0a);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            box-sizing: border-box;
+
+            .options_artist {
+                display: flex;
+                flex-direction: row;
+                gap: 2.5rem;
+                align-items: center;
+                padding: 0;
+
+                
+                .pause {
+                    width: 2rem;
+                    height: 2rem;
+                    background-color: #1ed760;
+                    padding: 1.5rem;
+                    border-radius: 50%;
+                    font-size: 2rem;
+                    display: flex;
+                    @include center;
+                }
+
+                .btn_follow {
+                    width: 8.5rem;
+                    height: 2.5rem;
+                    background: none;
+                    border-radius: 3rem;
+                    border: solid #fff;
+                    border-width: 0.1rem;
+                    text-align: center;
+                    color: #fff;
+                    font-weight: 100;
+                }
+
+                .view_more {
+                    font-size: 2rem;
+                    font-weight: 100;
+
+                }
+            }
+
+            .top_songs {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0;
+
+                .title_top {
+                    padding: 2rem 0.5rem;
+                    font-size: 2rem;
+                    font-weight: 400;
+                    font-stretch: normal;
+                    color: #fff;
+                }
+
+                .song_1 {
+                    display: grid;
+                    grid-template-columns: 2rem 4rem 3fr 2fr 1fr;
+                    box-sizing: border-box;
+                    padding: 0;
+                    gap: 1rem;
+                    width: 100%;
+                    justify-content: flex-start;
+                    align-items: center;
+                    justify-items: center;
+                    color: #fff;
+                    padding-bottom: 1.2rem;
+
+                    .number_play {
+                        font-weight: 100;
+                        font-size: 1.2rem;
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        
+                    }
+                    
+                    .name_song_play {
+                        font-size: 1.3rem;
+                        justify-self: flex-start;
+                        color:#1ed760;
+                    }
+
+                    .simg {
+                        width: 4rem;
+                        border-radius: 0.4rem;
+                        justify-self: flex-start;
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                    }
+
+                    .viewers, 
+                    .time {
+                        font-size: 1.2rem;
+                        opacity: 0.7;
+                    }
+
+                    .number {
+                        font-weight: 100;
+                        font-size: 1.2rem;
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        
+                    }
+                    
+                    .name_song {
+                        font-size: 1.3rem;
+                        justify-self: flex-start;
+                    }
+                }
+            }
+        }
+    }
+
+    .aside {
+        width: 100%;
+        height: 100%;
+        background-color: $color_box;
+        border-radius: $boder-rad;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        box-sizing: $box_sz;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 5rem 23rem 6rem 35rem;
+
+        .name_artist_asd {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            color: #fff;
+            padding: 2rem 1rem;
+            grid-row-start: 1;
+            grid-row-end: 1;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            
+            .name {
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+
+            .close_asd {
+                opacity: 0.5;
+            }
+        }
+
+        .img_song {
+            display: block;
+            width: 8rem;
+            height: 8rem;
+            background-color: #000000;
+            border-radius: $boder-rad;
+            padding: 2rem;
+            padding-bottom: 0.5rem;
+            justify-content: center;
+            align-content: center;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 4;
+
+            .img_disc {
+                width: 20rem;
+                border-radius: 0.6rem;
+                
+            }
+        }
+
+        .name_song_asd {
+            display: flex;
+            flex-direction: row;
+            @include center;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            color: #fff;
+            justify-content: flex-start;
+            justify-content: space-between;
+            padding: 1rem;
+
+            .box_name {
+                display: flex;
+                flex-direction: column;
+
+                .namesong {
+                    font-size: 2.2rem;
+                    font-weight: 600;
+                }
+    
+                .nameartist {
+                    font-weight: 100;
+                }
+            }
+
+            .btn_extras {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+
+                .like, 
+                .option {
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        .inf_artist {
+            display: grid;
+            grid-template-rows: 15rem 20rem;
+            color: #fff;
+            grid-row-start: 4;
+            grid-row-end: 6;
+            grid-column-start: 1;
+            grid-column-end: 4;
+
+
+
+            .top_inf {
+                @include font;
+                grid-row-start: 1;
+                grid-row-end: 1;
+                grid-column-start: 1;
+                grid-column-end: 1;
+                z-index: 100;
+                padding: 1.6rem 1rem;
+
+
+            }
+
+            .img_inf {
+                width: 100%;
+                height: 15rem;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                grid-column-start: 1;
+                grid-column-end: 1;
+                padding: 1rem;
+                box-sizing: border-box;
+                background-image: url(../img/img-info.jpg);
+                background-size: cover;
+                background-position-y: 30%;
+                border-top-left-radius: 0.6rem;;
+                border-top-right-radius: 0.6rem;
+                opacity: 0.8;
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 1rem;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                grid-column-start: 1;
+                grid-column-end: 1;
+                background-color: #3333;
+                border-bottom-right-radius: 0.6rem;
+                border-bottom-left-radius: 0.6rem;
+
+                .art_nm {
+                    @include font; 
+                }
+
+                .foll {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    .foll_inf {
+                        font-size: 1.15rem;
+                        font-weight: 100;
+                        color: #8b8b8b;
+                        padding: 1rem 0;
+                    }
+
+                    .btn_unfoll {
+                        @include font;
+                        width: 60%;
+                        height: 60%;
+                        border-radius: 1.5rem;
+                        color: #fff;
+                        border: solid 0.1rem;
+                        background-color: #3333;
+                    }
+                }
+
+                .more_inf {
+                    display: block;
+                    text-align: left;
+                    padding: 1rem 0;
+
+                    .more_inf--txt {
+                        font-size: 1.1rem;
+                        font-weight: 100;
+                        color: #8b8b8b;
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    
+
+    .barplay {
+        width: 100%;
+        height: 6rem;
+        background-color: #000000;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        
+        .songplay {
+            display: flex;
+            flex-direction: row;
+            padding: 0.5rem 1rem;
+            @include center;
+            grid-row-start: 1;
+            grid-row-end: 1;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            justify-content: flex-start;
+
+            .img_play {
+                width: 4rem;
+                height: 4rem;
+                border-radius: $boder-rad;
+            }
+
+            .names {
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem 1rem;
+
+                .nms {
+                    @include font;
+                    color: #ffffff;
+                }
+
+                .nma {
+                    font-size: 1rem;
+                    font-weight: 100;
+                    color: #ffffff;
+                }
+            }
+
+            .bar_like {
+                font-size: 1.2rem;
+                font-weight: 100;
+            }
+        }
+    }
+
+    .bar_play {
+        display: flex;
+        flex-direction: row;
+        @include center;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font-size: 1.2rem;
+        font-weight: 100;
+        gap: 1.5rem;
+
+        .btn_ps {
+            font-size: 2.5rem;
+        }
+
+        .icon {
+            opacity: 0.6;
+        }
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+        padding: 0 1rem;
+        gap: 1rem;
+
+        .icont, .icont_use {
+            font-size: 1.1rem;
+        }
+
+        .vol {
+            width: 6rem;
+            height: 0.15rem;
+            background-color: #fff;
+            border-radius: 2rem;
+        }
+    }
+}

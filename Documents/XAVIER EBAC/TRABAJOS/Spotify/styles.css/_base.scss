@@ -1,0 +1,26 @@
+
+$boder-rad: 0.4rem;
+$box_sz: border-box;
+$color_box: #0a0a0a;
+$color_side-txt: #b3b3b3;
+
+
+@mixin sidebar1 {
+    display: flex;
+    flex-direction: row;
+    color: $color_side-txt;
+    gap: 1rem;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+}
+
+@mixin center {
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin font {
+    font-size: 1.15rem;
+    font-weight: 600;
+}

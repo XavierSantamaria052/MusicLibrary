@@ -1,0 +1,1342 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  font-family: "rubik";
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
+  box-sizing: border-box;
+  -moz-column-gap: 0.4rem;
+       column-gap: 0.4rem;
+  row-gap: 0.4rem;
+  margin: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+main .sidebar_1 {
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  border-radius: 0.4rem;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  box-sizing: border-box;
+  justify-items: flex-start;
+  position: static;
+}
+main .sidebar_1 .home {
+  display: flex;
+  flex-direction: row;
+  color: #b3b3b3;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+}
+main .sidebar_1 .search {
+  display: flex;
+  flex-direction: row;
+  color: #b3b3b3;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+}
+main .sidebar_2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  border-radius: 0.4rem;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  box-sizing: border-box;
+  justify-items: flex-start;
+}
+main .sidebar_2 .library {
+  display: grid;
+  grid-template-columns: 2fr 3rem 3rem;
+  grid-template-rows: 1fr;
+  color: #b3b3b3;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  align-items: center;
+  width: 25rem;
+}
+main .sidebar_2 .library .your_lib {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: #b3b3b3;
+  gap: 1rem;
+  align-items: center;
+}
+main .sidebar_2 .library .plus,
+main .sidebar_2 .library .view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+main .sidebar_2 .library svg {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  fill: #b3b3b3;
+  width: 2rem;
+}
+main .sidebar_2 .artist {
+  display: flex;
+  flex-direction: row;
+  padding: 0.4rem 1rem;
+  gap: 1rem;
+}
+main .sidebar_2 .artist .close {
+  display: flex;
+  background-color: #313131;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+}
+main .sidebar_2 .artist .btn_art {
+  padding: 0.5rem 1rem;
+  border-radius: 3rem;
+  color: #000000;
+  background-color: #fff;
+  cursor: pointer;
+  font-family: "rubik";
+  font-size: 1.5rem;
+}
+main .sidebar_2 .extra_options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #b3b3b3;
+  gap: 10rem;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+main .sidebar_2 .extra_options .order {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 0.5rem;
+  color: #b3b3b3;
+}
+main .sidebar_2 .list_artist {
+  display: flex;
+  flex-direction: column;
+}
+main .sidebar_2 .list_artist .box_artist {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+main .sidebar_2 .list_artist .img_artist {
+  width: 4rem;
+  border-radius: 50%;
+}
+main .sidebar_2 .list_artist .name_artist {
+  color: #b3b3b3;
+  font-size: 1.5rem;
+}
+main .topbar {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.4rem;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  box-sizing: border-box;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+}
+main .topbar .L_R {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  width: 80%;
+}
+main .topbar .L_R .left,
+main .topbar .L_R .right {
+  background-color: #000000;
+  border-radius: 50%;
+  padding: 0.7rem 1rem;
+  border: none;
+}
+main .topbar .login {
+  display: grid;
+  grid-template-columns: 1fr 4rem 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-decoration: none;
+  width: 30rem;
+}
+main .topbar .login .install {
+  width: 100%;
+  border: none;
+  background-color: #313131;
+  color: #fff;
+  border-radius: 1.5rem;
+  padding: 0.65rem;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
+}
+main .topbar .login .news {
+  width: 80%;
+  background-color: #313131;
+  border-radius: 50%;
+  border: none;
+  padding: 0.65rem 0.8rem;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+main .topbar .login .sesion {
+  width: 100%;
+  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 1.5rem;
+  padding: 0.65rem;
+  font-size: 1.2rem;
+}
+main .title {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  z-index: 100;
+  justify-content: start;
+  font-size: 1rem;
+  color: #fff;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.5rem 0 0.5rem 0.2rem;
+}
+main .title .title_verify {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+main .title .title_verify .img_verif {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+main .title .title_verify .verify_txt {
+  font-size: 1.5rem;
+}
+main .title .name_title {
+  font-size: 10rem;
+  padding: 0 1rem;
+}
+main .title .followers {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0 1rem;
+}
+main .content {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.4rem;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-image: -moz-linear-gradient(center);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 33rem 1fr;
+}
+main .content .content_img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: url("../img/CREPPYNUTSPORTADA.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  opacity: 0.86;
+  border-radius: 1rem 1rem 0 0;
+}
+main .content .songs {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#686868, #0a0a0a);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+main .content .songs .options_artist {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 0;
+}
+main .content .songs .options_artist .pause {
+  width: 2rem;
+  height: 2rem;
+  background-color: #1ed760;
+  padding: 1.5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .content .songs .options_artist .btn_follow {
+  width: 8.5rem;
+  height: 2.5rem;
+  background: none;
+  border-radius: 3rem;
+  border: solid #fff;
+  border-width: 0.1rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 100;
+}
+main .content .songs .options_artist .view_more {
+  font-size: 2rem;
+  font-weight: 100;
+}
+main .content .songs .top_songs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+main .content .songs .top_songs .title_top {
+  padding: 2rem 0.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+  font-stretch: normal;
+  color: #fff;
+}
+main .content .songs .top_songs .song_1 {
+  display: grid;
+  grid-template-columns: 2rem 4rem 3fr 2fr 1fr;
+  box-sizing: border-box;
+  padding: 0;
+  gap: 1rem;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  justify-items: center;
+  color: #fff;
+  padding-bottom: 1.2rem;
+}
+main .content .songs .top_songs .song_1 .number_play {
+  font-weight: 100;
+  font-size: 1.2rem;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+main .content .songs .top_songs .song_1 .name_song_play {
+  font-size: 1.3rem;
+  justify-self: flex-start;
+  color: #1ed760;
+}
+main .content .songs .top_songs .song_1 .simg {
+  width: 4rem;
+  border-radius: 0.4rem;
+  justify-self: flex-start;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+main .content .songs .top_songs .song_1 .viewers,
+main .content .songs .top_songs .song_1 .time {
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+main .content .songs .top_songs .song_1 .number {
+  font-weight: 100;
+  font-size: 1.2rem;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+main .content .songs .top_songs .song_1 .name_song {
+  font-size: 1.3rem;
+  justify-self: flex-start;
+}
+main .aside {
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  border-radius: 0.4rem;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 5rem 23rem 6rem 35rem;
+}
+main .aside .name_artist_asd {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+  padding: 2rem 1rem;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+main .aside .name_artist_asd .name {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+main .aside .name_artist_asd .close_asd {
+  opacity: 0.5;
+}
+main .aside .img_song {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  background-color: #000000;
+  border-radius: 0.4rem;
+  padding: 2rem;
+  padding-bottom: 0.5rem;
+  justify-content: center;
+  align-content: center;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+main .aside .img_song .img_disc {
+  width: 20rem;
+  border-radius: 0.6rem;
+}
+main .aside .name_song_asd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  color: #fff;
+  justify-content: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+}
+main .aside .name_song_asd .box_name {
+  display: flex;
+  flex-direction: column;
+}
+main .aside .name_song_asd .box_name .namesong {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+main .aside .name_song_asd .box_name .nameartist {
+  font-weight: 100;
+}
+main .aside .name_song_asd .btn_extras {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+main .aside .name_song_asd .btn_extras .like,
+main .aside .name_song_asd .btn_extras .option {
+  opacity: 0.5;
+}
+main .aside .inf_artist {
+  display: grid;
+  grid-template-rows: 15rem 20rem;
+  color: #fff;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+main .aside .inf_artist .top_inf {
+  font-size: 1.15rem;
+  font-weight: 600;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  z-index: 100;
+  padding: 1.6rem 1rem;
+}
+main .aside .inf_artist .img_inf {
+  width: 100%;
+  height: 15rem;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-image: url(../img/img-info.jpg);
+  background-size: cover;
+  background-position-y: 30%;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+  opacity: 0.8;
+}
+main .aside .inf_artist .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  background-color: rgba(51, 51, 51, 0.2);
+  border-bottom-right-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+}
+main .aside .inf_artist .info .art_nm {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+main .aside .inf_artist .info .foll {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+main .aside .inf_artist .info .foll .foll_inf {
+  font-size: 1.15rem;
+  font-weight: 100;
+  color: #8b8b8b;
+  padding: 1rem 0;
+}
+main .aside .inf_artist .info .foll .btn_unfoll {
+  font-size: 1.15rem;
+  font-weight: 600;
+  width: 60%;
+  height: 60%;
+  border-radius: 1.5rem;
+  color: #fff;
+  border: solid 0.1rem;
+  background-color: rgba(51, 51, 51, 0.2);
+}
+main .aside .inf_artist .info .more_inf {
+  display: block;
+  text-align: left;
+  padding: 1rem 0;
+}
+main .aside .inf_artist .info .more_inf .more_inf--txt {
+  font-size: 1.1rem;
+  font-weight: 100;
+  color: #8b8b8b;
+  line-height: 1.5rem;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+}
+footer .barplay {
+  width: 100%;
+  height: 6rem;
+  background-color: #000000;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+footer .barplay .songplay {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  justify-content: flex-start;
+}
+footer .barplay .songplay .img_play {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.4rem;
+}
+footer .barplay .songplay .names {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+}
+footer .barplay .songplay .names .nms {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+footer .barplay .songplay .names .nma {
+  font-size: 1rem;
+  font-weight: 100;
+  color: #ffffff;
+}
+footer .barplay .songplay .bar_like {
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+footer .bar_play {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  font-size: 1.2rem;
+  font-weight: 100;
+  gap: 1.5rem;
+}
+footer .bar_play .btn_ps {
+  font-size: 2.5rem;
+}
+footer .bar_play .icon {
+  opacity: 0.6;
+}
+footer .controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+footer .controls .icont, footer .controls .icont_use {
+  font-size: 1.1rem;
+}
+footer .controls .vol {
+  width: 6rem;
+  height: 0.15rem;
+  background-color: #fff;
+  border-radius: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  font-family: "rubik";
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
+  box-sizing: border-box;
+  -moz-column-gap: 0.4rem;
+       column-gap: 0.4rem;
+  row-gap: 0.4rem;
+  margin: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+main .sidebar_1 {
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  border-radius: 0.4rem;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  box-sizing: border-box;
+  justify-items: flex-start;
+  position: static;
+}
+main .sidebar_1 .home {
+  display: flex;
+  flex-direction: row;
+  color: #b3b3b3;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+}
+main .sidebar_1 .search {
+  display: flex;
+  flex-direction: row;
+  color: #b3b3b3;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+}
+main .sidebar_2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  border-radius: 0.4rem;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  box-sizing: border-box;
+  justify-items: flex-start;
+}
+main .sidebar_2 .library {
+  display: grid;
+  grid-template-columns: 2fr 3rem 3rem;
+  grid-template-rows: 1fr;
+  color: #b3b3b3;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  align-items: center;
+  width: 25rem;
+}
+main .sidebar_2 .library .your_lib {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: #b3b3b3;
+  gap: 1rem;
+  align-items: center;
+}
+main .sidebar_2 .library .plus,
+main .sidebar_2 .library .view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+main .sidebar_2 .library svg {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  fill: #b3b3b3;
+  width: 2rem;
+}
+main .sidebar_2 .artist {
+  display: flex;
+  flex-direction: row;
+  padding: 0.4rem 1rem;
+  gap: 1rem;
+}
+main .sidebar_2 .artist .close {
+  display: flex;
+  background-color: #313131;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+}
+main .sidebar_2 .artist .btn_art {
+  padding: 0.5rem 1rem;
+  border-radius: 3rem;
+  color: #000000;
+  background-color: #fff;
+  cursor: pointer;
+  font-family: "rubik";
+  font-size: 1.5rem;
+}
+main .sidebar_2 .extra_options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #b3b3b3;
+  gap: 10rem;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+main .sidebar_2 .extra_options .order {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 0.5rem;
+  color: #b3b3b3;
+}
+main .sidebar_2 .list_artist {
+  display: flex;
+  flex-direction: column;
+}
+main .sidebar_2 .list_artist .box_artist {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+main .sidebar_2 .list_artist .img_artist {
+  width: 4rem;
+  border-radius: 50%;
+}
+main .sidebar_2 .list_artist .name_artist {
+  color: #b3b3b3;
+  font-size: 1.5rem;
+}
+main .topbar {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.4rem;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  box-sizing: border-box;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+}
+main .topbar .L_R {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  width: 80%;
+}
+main .topbar .L_R .left,
+main .topbar .L_R .right {
+  background-color: #000000;
+  border-radius: 50%;
+  padding: 0.7rem 1rem;
+  border: none;
+}
+main .topbar .login {
+  display: grid;
+  grid-template-columns: 1fr 4rem 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-decoration: none;
+  width: 30rem;
+}
+main .topbar .login .install {
+  width: 100%;
+  border: none;
+  background-color: #313131;
+  color: #fff;
+  border-radius: 1.5rem;
+  padding: 0.65rem;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
+}
+main .topbar .login .news {
+  width: 80%;
+  background-color: #313131;
+  border-radius: 50%;
+  border: none;
+  padding: 0.65rem 0.8rem;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+main .topbar .login .sesion {
+  width: 100%;
+  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 1.5rem;
+  padding: 0.65rem;
+  font-size: 1.2rem;
+}
+main .title {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  z-index: 100;
+  justify-content: start;
+  font-size: 1rem;
+  color: #fff;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.5rem 0 0.5rem 0.2rem;
+}
+main .title .title_verify {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+main .title .title_verify .img_verif {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+main .title .title_verify .verify_txt {
+  font-size: 1.5rem;
+}
+main .title .name_title {
+  font-size: 10rem;
+  padding: 0 1rem;
+}
+main .title .followers {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0 1rem;
+}
+main .content {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.4rem;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-image: -moz-linear-gradient(center);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 33rem 1fr;
+}
+main .content .content_img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: url("../img/CREPPYNUTSPORTADA.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  opacity: 0.86;
+  border-radius: 1rem 1rem 0 0;
+}
+main .content .songs {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#686868, #0a0a0a);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+main .content .songs .options_artist {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 0;
+}
+main .content .songs .options_artist .pause {
+  width: 2rem;
+  height: 2rem;
+  background-color: #1ed760;
+  padding: 1.5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .content .songs .options_artist .btn_follow {
+  width: 8.5rem;
+  height: 2.5rem;
+  background: none;
+  border-radius: 3rem;
+  border: solid #fff;
+  border-width: 0.1rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 100;
+}
+main .content .songs .options_artist .view_more {
+  font-size: 2rem;
+  font-weight: 100;
+}
+main .content .songs .top_songs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+main .content .songs .top_songs .title_top {
+  padding: 2rem 0.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+  font-stretch: normal;
+  color: #fff;
+}
+main .content .songs .top_songs .song_1 {
+  display: grid;
+  grid-template-columns: 2rem 4rem 3fr 2fr 1fr;
+  box-sizing: border-box;
+  padding: 0;
+  gap: 1rem;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  justify-items: center;
+  color: #fff;
+  padding-bottom: 1.2rem;
+}
+main .content .songs .top_songs .song_1 .number_play {
+  font-weight: 100;
+  font-size: 1.2rem;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+main .content .songs .top_songs .song_1 .name_song_play {
+  font-size: 1.3rem;
+  justify-self: flex-start;
+  color: #1ed760;
+}
+main .content .songs .top_songs .song_1 .simg {
+  width: 4rem;
+  border-radius: 0.4rem;
+  justify-self: flex-start;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+main .content .songs .top_songs .song_1 .viewers,
+main .content .songs .top_songs .song_1 .time {
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+main .content .songs .top_songs .song_1 .number {
+  font-weight: 100;
+  font-size: 1.2rem;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+main .content .songs .top_songs .song_1 .name_song {
+  font-size: 1.3rem;
+  justify-self: flex-start;
+}
+main .aside {
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  border-radius: 0.4rem;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 5rem 23rem 6rem 35rem;
+}
+main .aside .name_artist_asd {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+  padding: 2rem 1rem;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+main .aside .name_artist_asd .name {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+main .aside .name_artist_asd .close_asd {
+  opacity: 0.5;
+}
+main .aside .img_song {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  background-color: #000000;
+  border-radius: 0.4rem;
+  padding: 2rem;
+  padding-bottom: 0.5rem;
+  justify-content: center;
+  align-content: center;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+main .aside .img_song .img_disc {
+  width: 20rem;
+  border-radius: 0.6rem;
+}
+main .aside .name_song_asd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  color: #fff;
+  justify-content: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+}
+main .aside .name_song_asd .box_name {
+  display: flex;
+  flex-direction: column;
+}
+main .aside .name_song_asd .box_name .namesong {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+main .aside .name_song_asd .box_name .nameartist {
+  font-weight: 100;
+}
+main .aside .name_song_asd .btn_extras {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+main .aside .name_song_asd .btn_extras .like,
+main .aside .name_song_asd .btn_extras .option {
+  opacity: 0.5;
+}
+main .aside .inf_artist {
+  display: grid;
+  grid-template-rows: 15rem 20rem;
+  color: #fff;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+main .aside .inf_artist .top_inf {
+  font-size: 1.15rem;
+  font-weight: 600;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  z-index: 100;
+  padding: 1.6rem 1rem;
+}
+main .aside .inf_artist .img_inf {
+  width: 100%;
+  height: 15rem;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-image: url(../img/img-info.jpg);
+  background-size: cover;
+  background-position-y: 30%;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+  opacity: 0.8;
+}
+main .aside .inf_artist .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  background-color: rgba(51, 51, 51, 0.2);
+  border-bottom-right-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+}
+main .aside .inf_artist .info .art_nm {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+main .aside .inf_artist .info .foll {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+main .aside .inf_artist .info .foll .foll_inf {
+  font-size: 1.15rem;
+  font-weight: 100;
+  color: #8b8b8b;
+  padding: 1rem 0;
+}
+main .aside .inf_artist .info .foll .btn_unfoll {
+  font-size: 1.15rem;
+  font-weight: 600;
+  width: 60%;
+  height: 60%;
+  border-radius: 1.5rem;
+  color: #fff;
+  border: solid 0.1rem;
+  background-color: rgba(51, 51, 51, 0.2);
+}
+main .aside .inf_artist .info .more_inf {
+  display: block;
+  text-align: left;
+  padding: 1rem 0;
+}
+main .aside .inf_artist .info .more_inf .more_inf--txt {
+  font-size: 1.1rem;
+  font-weight: 100;
+  color: #8b8b8b;
+  line-height: 1.5rem;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+}
+footer .barplay {
+  width: 100%;
+  height: 6rem;
+  background-color: #000000;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+footer .barplay .songplay {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  justify-content: flex-start;
+}
+footer .barplay .songplay .img_play {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.4rem;
+}
+footer .barplay .songplay .names {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+}
+footer .barplay .songplay .names .nms {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+footer .barplay .songplay .names .nma {
+  font-size: 1rem;
+  font-weight: 100;
+  color: #ffffff;
+}
+footer .barplay .songplay .bar_like {
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+footer .bar_play {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  font-size: 1.2rem;
+  font-weight: 100;
+  gap: 1.5rem;
+}
+footer .bar_play .btn_ps {
+  font-size: 2.5rem;
+}
+footer .bar_play .icon {
+  opacity: 0.6;
+}
+footer .controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+footer .controls .icont, footer .controls .icont_use {
+  font-size: 1.1rem;
+}
+footer .controls .vol {
+  width: 6rem;
+  height: 0.15rem;
+  background-color: #fff;
+  border-radius: 2rem;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css/main.css">
+        <link rel="icon" href="./img/spotify_3669986.png" type="image/png">
+        <title>Spotify | Creppy Nuts</title>
+    </head>
+    <body>
+        <main>
+            <div class="sidebar_1">
+                <a href="#" class="home">
+                    <i class="fa-solid fa-house" style="color: #7a7a7a;"></i>
+                    <p>Inicio</p>
+                </a>
+                <a href="#" class="search">
+                    <i class="fa-solid fa-magnifying-glass" style="color: #7a7a7a;"></i>
+                    <p>Buscar</p>
+                </a>
+            </div>
+            <div class="sidebar_2">
+                <div class="library">
+                    <a href="#" class="your_lib">
+                        <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 bneLcE"><path d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"></path></svg>
+                        <p>Tu biblioteca</p>
+                    </a>
+                    <a href="#" class="plus">
+                        <i class="fa-solid fa-plus" style="color: #7a7a7a;"></i>
+                    </a>
+                    <a href="#" class="view" id="openReactApp">
+                        <i class="fa-solid fa-arrow-right" style="color: #7a7a7a;"></i>
+                    </a>
+                </div>
+                <div class="artist">
+                    <a href="#" class="close">
+                        <i class="fa-solid fa-x" style="color: #7a7a7a;"></i>
+                    </a>
+                    <button class="btn_art">
+                        Artistas
+                    </button>
+                </div>
+                <div class="extra_options">
+                    <a href="#" class="search_last">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #7a7a7a;"></i>
+                    </a>
+                    <a href="#" class="order">
+                        <i class="fa-solid fa-list-ul" style="color: #7a7a7a;"></i>
+                        <p>Orden alfabético</p>
+                    </a>
+                </div>
+                <div class="list_artist">
+                    <a href="#" class="box_artist">
+                        <img src="img/artist/ado.jpg" alt="Ado" class="img_artist">
+                        <p class="name_artist">ADO</p>
+                    </a>
+                    <a href="#" class="box_artist">
+                        <img src="img/artist/gallego.jpg" alt="gallego" class="img_artist">
+                        <p class="name_artist">Gallego</p>
+                    </a>
+                    <a href="#" class="box_artist">
+                        <img src="img/artist/galneryus.jpg" alt="galneryus" class="img_artist">
+                        <p class="name_artist">GALNERYUS</p>
+                    </a>
+                    <a href="#" class="box_artist">
+                        <img src="img/artist/kankaku piero.jpg" alt="kankaku" class="img_artist">
+                        <p class="name_artist">Kankaku Piero</p>
+                    </a>
+                    <a href="#" class="box_artist">
+                        <img src="img/artist/linked horizon.jpg" alt="Linked" class="img_artist">
+                        <p class="name_artist">Linked Horizon</p>
+                    </a>
+                    <a href="#" class="box_artist">
+                        <img src="img/artist/santafeklan.jpg" alt="santafeklan" class="img_artist">
+                        <p class="name_artist">Santa Fe Klan</p>
+                    </a>
+                </div>
+            </div>
+            <div class="topbar">
+                <a href="#" class="L_R">
+                    <button class="left">
+                        <i class="fa-solid fa-chevron-left" style="color: #7a7a7a;"></i>
+                    </button>
+                    <button class="right">
+                        <i class="fa-solid fa-chevron-right" style="color: #7a7a7a;"></i>
+                    </button>
+                </a>
+                <a href="#" class="login">
+                    <button class="install">
+                        <i class="fa-regular fa-circle-down"
+                    style="color: #fff;"></i>
+                    Instalar app
+                    </button>
+                    <button class="news">
+                        <i class="fa-regular fa-bell" style="color: #7a7a7a;"></i>
+                    </button>
+                    <button class="sesion">
+                        <p>Iniciar sesíon</p>
+                    </button>
+                </a>
+            </div>
+            <div class="title">
+                <div class="title_verify">
+                    <img src="img/check-mark_15659968.png" alt="verify" class="img_verif">
+                    <p class="verify_txt">Artista verificado</p>
+                </div>
+                <h1 class="name_title">Creppy Nuts</h1>
+                <h3 class="followers">9,408,255 oyentes mensuales</h3>
+            </div>
+            </div>
+
+            <div class="content">
+                <div class="content_img">
+                </div>
+                <div class="songs">
+                    <div class="options_artist">
+                        <buton class="pause">
+                            <i id="pause" class="fa-solid fa-pause" style="color: #000;"></i>
+                        </buton>
+                        <button class="btn_follow">
+                            Siguiendo
+                        </button>
+                        <a href="#" class="view_more">
+                            <i class="fa-solid fa-ellipsis" style="color: #fff;"></i>
+                        </a>
+                    </div>
+                    <div class="top_songs">
+                        <div class="title_top">
+                            <p>Populares</p>
+                        </div>
+                        <div class="song_1">
+                            <p class="number_play"><i class="fa-solid fa-signal" style="color: #1ed760;"></i></p>
+                            <img src="img/otonoke.jpg" alt="otonoke" class="simg">
+                            <p class="name_song_play">オトノケ - Otonoke</p>
+                            <p class="viewers">129,364,834</p>
+                            <p class="time">3:05</p>
+                        </div>
+                        <div class="song_1">
+                            <p class="number">2</p>
+                            <img src="img/bling bang.jpg" alt="Bling-Bang-Bang-Bonr" class="simg">
+                            <p class="name_song">Bling-Bang-Bang-Bonr</p>
+                            <p class="viewers">377,707,663</p>
+                            <p class="time">2:48</p>
+                        </div>
+                        <div class="song_1">
+                            <p class="number">3</p>
+                            <img src="img/2way nice guy.jpg" alt="2waynice" class="simg">
+                            <p class="name_song">堕天</p>
+                            <p class="viewers">75,786,198</p>
+                            <p class="time">2:52</p>
+                        </div>
+                        <div class="song_1">
+                            <p class="number">4</p>
+                            <img src="img/case.jpg" alt="2waynice" class="simg">
+                            <p class="name_song">のびしろ</p>
+                            <p class="viewers">71,537,050</p>
+                            <p class="time">3:56</p>
+                        </div>
+                        <div class="song_1">
+                            <p class="number">5</p>
+                            <img src="img/docchi.jpg" alt="gohotei" class="simg">
+                            <p class="name_song">Gouhou Teki Tobi Kata No Susume</p>
+                            <p class="viewers">45,622,333</p>
+                            <p class="time">4:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aside">
+                <div class="name_artist_asd">
+                    <h4 class="name">Creppy Nuts</h4>
+                    <a href="#" class="close_asd">
+                        <i class="fa-solid fa-x" style="color: #fff;"></i>
+                    </a>
+                </div>
+                <div class="img_song">
+                    <img src="img/otonoke.jpg" alt="otonoke" class="img_disc">
+                </div>
+                <div class="name_song_asd">
+                    <div class="box_name">
+                    <p class="namesong">Otonoke</p>
+                    <p class="nameartist">Creppy Nuts</p>
+                    </div>
+                    <div class="btn_extras">
+                        <a href="#" class="like">
+                            <i class="fa-regular fa-heart" style="color: #fff;"></i>
+                        </a>
+                        <a href="#" class="option">
+                            <i class="fa-solid fa-ellipsis" style="color: #fff;"></i>
+                        </a>
+                    </div>    
+                </div>
+                <div class="inf_artist">
+                    <div class="top_inf">
+                        Información del artista
+                    </div>
+                    <div class="img_inf">
+                        
+                    </div>
+                    <div class="info">
+                        <div class="art_nm">Creppy Nuts
+                        </div>
+                        <div class="foll">
+                            <p class="foll_inf">9,393,359 oyentes mensuales</p>
+                            <button class="btn_unfoll">
+                                Dejar de seguir
+                            </button>
+                        </div>
+                        <div class="more_inf">
+                            <p class="more_inf--txt">Creepy Nuts es un dúo de hip hop japonés formado por DJ Matsunaga y R-Shitei. Hicieron su debut con un sello importante en 2017. Su sencillo «Bling-Bang-Bang-Born» fue lanzado el 7 de enero de 2024, como tema de apertura de la segunda temporada de la serie de anime Mashle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="barplay">
+                <div class="songplay">
+                    <img src="img/otonoke.jpg" alt="otonoke" class="img_play">
+                    <div class="name_play">
+                        <div class="names">
+                            <p class="nms">Otonoke</p>
+                            <p class="nma">Creppy Nuts</p>
+                        </div>
+                    </div>
+                    <a href="#" class="bar_like">
+                        <i class="fa-regular fa-heart" style="color: #fff;"></i>
+                    </a>
+                </div>
+                    <div class="bar_play">
+                    <a href="#" class="icon">
+                        <i class="fa-solid fa-shuffle" style="color: #fff;"></i>
+                    </a>
+                    <a href="#" class="icon">
+                        <i class="fa-solid fa-backward-step"
+                        style="color: #fff;"></i>
+                    </a>
+                    <a href="#" class="btn_ps">
+                        <i class="fa-solid fa-circle-pause" style="color: #fff;"></i>
+                    </a>
+                    <a href="#" class="icon"><i class="fa-solid fa-forward-step"
+                        style="color: #fff;"></i></a>
+                    <a href="#" class="icon">
+                        <i class="fa-solid fa-repeat" style="color: #fff;"></i>
+                    </a>
+                    </div>
+                    <div class="controls">
+                        <a href="#" class="icont_use">
+                            <i class="fa-solid fa-mobile" style="color: #fff;"></i>
+                        </a>
+                        <a href="#" class="icont">
+                            <i class="fa-solid fa-bars-progress" style="color: #fff;"></i>
+                        </a>
+                        <a href="#" class="icont">
+                            <i class="fa-solid fa-volume-low" style="color: #fff;"></i>
+                        </a>
+                        <label for="vol"class="vol">
+                            <progres id="vol" max="100"value="70" class="vol"></progress>
+                        </label>
+                        <a href="#" class="icont">
+                            <i class="fa-solid fa-desktop" style="color: #fff;"></i>
+                        </a>
+                        <a href="#" class="icont">
+                            <i class="fa-solid fa-window-maximize" 
+                            style="color: #fff;"></i>
+                        </a>
+                        <a href="#" class="icont">
+                            <i class="fa-solid fa-up-right-and-down-left-from-center"
+                            style="color: #fff;"></i>
+                        </a>
+                    </div>
+            </div>
+        </footer>
+
+        <script src="https://kit.fontawesome.com/5351a55e69.js" crossorigin="anonymous"></script>
+        <script>
+            document.getElementById("openReactApp").addEventListener("click", function() {
+                window.location.href = "http://localhost:3001/index.html";
+            });
+        </script>
+    </body>
+</html>
