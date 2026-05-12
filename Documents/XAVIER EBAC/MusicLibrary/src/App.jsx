@@ -1,18 +1,30 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import styled from "styled-components";
+import theme from "./styles/theme";
+import GlobalStyle from "./styles/GlobalStyle";
 import Home from "./pages/Home";
 import SongDetail from "./pages/SongDetail";
-import "./App.css";
+    
+    const AppWrapper = styled.div`
+    max-width: 860px;
+    margin: 0 auto;
+    padding: ${({ theme }) => theme.spacing.huge} ${({ theme }) => theme.spacing.xxxl};
+    `;
     
     function App() {
     return (
+        <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <BrowserRouter>
-        <div className="app">
+            <AppWrapper>
             <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/song/:id" element={<SongDetail />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/song/:id" element={<SongDetail />} />
             </Routes>
-        </div>
+            </AppWrapper>
         </BrowserRouter>
+        </ThemeProvider>
     );
     }
     

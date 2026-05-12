@@ -1,0 +1,52 @@
+const theme = {
+    colors: {
+        background: "#1a1210",
+        surface: "#2a1f1a",
+        surfaceHover: "#3a2a22",
+        border: "#4a3020",
+        primary: "#f97316",
+        primaryHover: "#ea6c0a",
+        primaryLight: "#fdba74",
+        textPrimary: "#fef3e2",
+        textSecondary: "#d4a574",
+        textMuted: "#a07050",
+        textDim: "#6b4c30",
+        error: "#ef4444",
+        gradientStart: "#f97316",
+        gradientEnd: "#ec4899",
+    },
+    borderRadius: {
+        sm: "8px",
+        md: "10px",
+        lg: "12px",
+        xl: "16px",
+        full: "20px",
+        circle: "50%",
+    },
+    fontSizes: {
+        xs: "0.8rem",
+        sm: "0.875rem",
+        md: "0.95rem",
+        base: "1rem",
+        lg: "1.1rem",
+        xl: "1.2rem",
+        xxl: "1.75rem",
+        title: "2.5rem",
+    },
+    spacing: {
+        xs: "0.2rem",
+        sm: "0.4rem",
+        md: "0.5rem",
+        lg: "0.75rem",
+        xl: "1rem",
+        xxl: "1.25rem",
+        xxxl: "1.5rem",
+        huge: "2rem",
+    },
+    transitions: {
+        fast: "0.15s ease",
+        base: "0.2s ease",
+    },
+    };
+    
+export default theme;

@@ -1,35 +1,213 @@
 import { useParams, Link } from "react-router-dom";
+import styled from "styled-components";
 import useFetch from "../hooks/useFetch";
+    
+    const PageWrapper = styled.main`
+    display: flex;
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing.huge};
+    animation: fadeIn 0.3s ease;
+    `;
+    
+    const BackLink = styled(Link)`
+    display: inline-block;
+    color: ${({ theme }) => theme.colors.primaryLight};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    transition: color ${({ theme }) => theme.transitions.base};
+    
+    &:hover {
+        color: ${({ theme }) => theme.colors.primary};
+    }
+    `;
+    
+    const AlbumCard = styled.div`
+    display: flex;
+    gap: ${({ theme }) => theme.spacing.huge};
+    background: ${({ theme }) => theme.colors.surface};
+    border: 1.5px solid ${({ theme }) => theme.colors.border};
+    border-radius: ${({ theme }) => theme.borderRadius.xl};
+    padding: ${({ theme }) => theme.spacing.xxxl};
+    
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
+    `;
+    
+    const AlbumCover = styled.img`
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: ${({ theme }) => theme.borderRadius.md};
+    flex-shrink: 0;
+    
+    @media (max-width: 600px) {
+        width: 100%;
+        height: 220px;
+    }
+    `;
+    
+    const AlbumInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing.lg};
+    `;
+    
+    const AlbumTitle = styled.h1`
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    font-weight: 700;
+    color: ${({ theme }) => theme.colors.textPrimary};
+    `;
+    
+    const AlbumArtist = styled.p`
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    color: ${({ theme }) => theme.colors.primaryLight};
+    font-weight: 500;
+    `;
+    
+    const MetaRow = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: ${({ theme }) => theme.spacing.md};
+    `;
+    
+    /* prop: type puede ser "year" | "genre" | "country" — cambia el color del badge */
+    const MetaBadge = styled.span`
+    padding: 0.3rem 0.75rem;
+    background: ${({ theme, type }) => {
+        if (type === "year") return theme.colors.surfaceHover;
+        if (type === "genre") return "#1e3a2f";
+        if (type === "country") return "#1a2a3a";
+        return theme.colors.border;
+    }};
+    color: ${({ theme, type }) => {
+        if (type === "genre") return "#4ade80";
+        if (type === "country") return "#60a5fa";
+        return theme.colors.textSecondary;
+    }};
+    border-radius: ${({ theme }) => theme.borderRadius.full};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    `;
+    
+    const Description = styled.p`
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    color: ${({ theme }) => theme.colors.textMuted};
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    `;
+    
+    const TracklistSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing.xl};
+    `;
+    
+    const TracklistTitle = styled.h2`
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    font-weight: 600;
+    color: ${({ theme }) => theme.colors.textSecondary};
+    `;
+    
+    const TrackList = styled.ol`
+    display: flex;
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing.sm};
+    `;
+    
+    /* prop: even — alterna color de fondo entre pares e impares */
+    const TrackItem = styled.li`
+    display: flex;
+    align-items: center;
+    gap: ${({ theme }) => theme.spacing.xl};
+    padding: 0.65rem ${({ theme }) => theme.spacing.xl};
+    background: ${({ theme, even }) =>
+        even ? theme.colors.surfaceHover : theme.colors.surface};
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    border-radius: ${({ theme }) => theme.borderRadius.sm};
+    transition: background ${({ theme }) => theme.transitions.fast};
+    
+    &:hover {
+        background: ${({ theme }) => theme.colors.surfaceHover};
+    }
+    `;
+    
+    const TrackNumber = styled.span`
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    color: ${({ theme }) => theme.colors.textDim};
+    min-width: 20px;
+    text-align: right;
+    `;
+    
+    const TrackTitle = styled.span`
+    font-size: ${({ theme }) => theme.fontSizes.md};
+    color: ${({ theme }) => theme.colors.textPrimary};
+    `;
+    
+    const StatusContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: ${({ theme }) => theme.spacing.xl};
+    padding: 3rem 1rem;
+    text-align: center;
+    `;
+    
+    const StatusText = styled.p`
+    color: ${({ variant, theme }) =>
+        variant === "error" ? theme.colors.error : theme.colors.textSecondary};
+    `;
+    
+    const Spinner = styled.div`
+    width: 40px;
+    height: 40px;
+    border: 4px solid ${({ theme }) => theme.colors.border};
+    border-top-color: ${({ theme }) => theme.colors.primary};
+    border-radius: ${({ theme }) => theme.borderRadius.circle};
+    animation: spin 0.8s linear infinite;
+    `;
+    
+    const RetryButton = styled.button`
+    padding: 0.6rem 1.25rem;
+    background: transparent;
+    border: 1.5px solid ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primaryLight};
+    border-radius: ${({ theme }) => theme.borderRadius.sm};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    transition: background ${({ theme }) => theme.transitions.base};
+    
+    &:hover {
+        background: ${({ theme }) => theme.colors.surfaceHover};
+    }
+    `;
+    
+    /* ─────────────────────────────── */
     
     const SongDetail = () => {
     const { id } = useParams();
-    
     const { data, loading, error, refetch } = useFetch(
-    `/api/api/v1/json/2/album.php?m=${id}`
+        `/api/api/v1/json/2/album.php?m=${id}`
     );
     
     if (loading) {
         return (
-        <div className="status-container">
-            <div className="spinner" aria-label="Cargando"></div>
-            <p className="status-text">Cargando detalles del álbum...</p>
-        </div>
+        <StatusContainer>
+            <Spinner />
+            <StatusText>Cargando detalles del álbum...</StatusText>
+        </StatusContainer>
         );
     }
     
     if (error) {
         return (
-        <div className="status-container error-container">
-            <p className="status-text error-text">
+        <StatusContainer>
+            <StatusText variant="error">
             ⚠️ Hubo un problema al cargar los datos. Intenta nuevamente.
-            </p>
-            <button className="retry-button" onClick={refetch}>
-            Reintentar
-            </button>
-            <Link to="/" className="back-link">
-            ← Volver al inicio
-            </Link>
-        </div>
+            </StatusText>
+            <RetryButton onClick={refetch}>Reintentar</RetryButton>
+            <BackLink to="/">← Volver al inicio</BackLink>
+        </StatusContainer>
         );
     }
     
@@ -37,76 +215,63 @@ import useFetch from "../hooks/useFetch";
     
     if (!album) {
         return (
-        <div className="status-container">
-            <p className="status-text">No se encontró información para este álbum.</p>
-            <Link to="/" className="back-link">
-            ← Volver al inicio
-            </Link>
-        </div>
+        <StatusContainer>
+            <StatusText>No se encontró información para este álbum.</StatusText>
+            <BackLink to="/">← Volver al inicio</BackLink>
+        </StatusContainer>
         );
     }
     
     const tracks = [];
     for (let i = 1; i <= 20; i++) {
-        const trackKey = `strTrack${String(i).padStart(2, "0")}`;
-        if (album[trackKey]) {
-        tracks.push({ number: i, title: album[trackKey] });
-        }
+        const key = `strTrack${String(i).padStart(2, "0")}`;
+        if (album[key]) tracks.push({ number: i, title: album[key] });
     }
     
     return (
-        <main className="detail-page">
-        <Link to="/" className="back-link">
-            ← Volver al inicio
-        </Link>
+        <PageWrapper>
+        <BackLink to="/">← Volver al inicio</BackLink>
     
-        <div className="album-detail-card">
+        <AlbumCard>
             {album.strAlbumThumb && (
-            <img
-                src={album.strAlbumThumb}
-                alt={`Portada de ${album.strAlbum}`}
-                className="album-cover"
-            />
+            <AlbumCover src={album.strAlbumThumb} alt={`Portada de ${album.strAlbum}`} />
             )}
-    
-            <div className="album-info">
-            <h1 className="album-title">{album.strAlbum}</h1>
-            <p className="album-artist">{album.strArtist}</p>
-    
-            <div className="album-meta">
+            <AlbumInfo>
+            <AlbumTitle>{album.strAlbum}</AlbumTitle>
+            <AlbumArtist>{album.strArtist}</AlbumArtist>
+            <MetaRow>
                 {album.intYearReleased && (
-                <span className="meta-badge">📅 {album.intYearReleased}</span>
+                <MetaBadge type="year">📅 {album.intYearReleased}</MetaBadge>
                 )}
                 {album.strGenre && (
-                <span className="meta-badge">🎵 {album.strGenre}</span>
+                <MetaBadge type="genre">🎵 {album.strGenre}</MetaBadge>
                 )}
                 {album.strCountry && (
-                <span className="meta-badge">🌍 {album.strCountry}</span>
+                <MetaBadge type="country">🌍 {album.strCountry}</MetaBadge>
                 )}
-            </div>
-    
-            {album.strDescriptionES || album.strDescriptionEN ? (
-                <p className="album-description">
+            </MetaRow>
+            {(album.strDescriptionES || album.strDescriptionEN) && (
+                <Description>
                 {album.strDescriptionES || album.strDescriptionEN}
-                </p>
-            ) : null}
-            </div>
-        </div>
+                </Description>
+            )}
+            </AlbumInfo>
+        </AlbumCard>
     
         {tracks.length > 0 && (
-            <section className="tracklist-section">
-            <h2 className="tracklist-title">Lista de canciones</h2>
-            <ol className="tracklist">
+            <TracklistSection>
+            <TracklistTitle>Lista de canciones</TracklistTitle>
+            <TrackList>
                 {tracks.map((track) => (
-                <li key={track.number} className="track-item">
-                    <span className="track-number">{track.number}</span>
-                    <span className="track-title">{track.title}</span>
-                </li>
+                <TrackItem key={track.number} even={track.number % 2 === 0}>
+                    <TrackNumber>{track.number}</TrackNumber>
+                    <TrackTitle>{track.title}</TrackTitle>
+                </TrackItem>
                 ))}
-            </ol>
-            </section>
+            </TrackList>
+            </TracklistSection>
         )}
-        </main>
+        </PageWrapper>
     );
     };
     
