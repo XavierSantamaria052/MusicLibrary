@@ -122,12 +122,6 @@ La aplicación consume endpoints REST externos para obtener:
 
 ---
 
-# Capturas
-
-Agregar screenshots aquí.
-
----
-
 # Autor
 
 Xavier Santamaria
